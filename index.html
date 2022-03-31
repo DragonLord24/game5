@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+		}
+		.text {
+			font-size: 75px;
+			color: red;
+			margin-left: 750px;
+			padding-top: 350px;
+			display: none;
+		
+		}
+		.img {
+			height: 150px;
+			width: 150px;
+			margin-left: 750px;
+			display: none;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box" style="">
+		<p class="text">You Win</p>
+		<div>
+			<img src="Brain.png" class="img">
+		</div>
+		
+		<h5 style="position: absolute; left: 600px; top: 50px" class="score"></h5>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; ">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; ">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; ">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px">
+		<img class="zombies" src="zombie2.png" style="top: 320px">
+		<img class="zombies" src="zombie2.png" style="top: 420px">
+		<img class="zombies" src="zombie4.png" style="top: 520px">
+		<img class="zombies" src="zombie4.png" style="top: 620px">
+	</div>
+<script>
+	let shooters = document.querySelectorAll('.shooter')
+	let zombies = document.querySelectorAll('.zombies')
+	let youwintxt = document.querySelector('.text')
+	let brain = document.querySelector('.img')
+
+	let step0 = 1300
+	let step1 = 1300
+	let step2 = 1300
+	let step3 = 1300
+	let step4 = 1300
+	let px = "px"
+	let youwin = 0
+
+	zombies[0].style.marginLeft = "1300px";
+	zombies[1].style.marginLeft = "1300px";
+	zombies[2].style.marginLeft = "1300px";
+	zombies[3].style.marginLeft = "1300px";
+	zombies[4].style.marginLeft = "1300px";
+
+	zombies[1].style.marginTop = "50px";
+	zombies[2].style.marginTop = "75px";
+	zombies[3].style.marginTop = "100px";
+	zombies[4].style.marginTop = "125px";
+
+	shooters[0].style.marginLeft = "525px";
+	shooters[1].style.marginLeft = "525px";
+	shooters[2].style.marginLeft = "525px";
+	shooters[3].style.marginLeft = "525px";
+	shooters[4].style.marginLeft = "525px";
+
+	shooters[1].style.marginTop = "50px";
+	shooters[2].style.marginTop = "75px";
+	shooters[3].style.marginTop = "100px";
+	shooters[4].style.marginTop = "125px";
+
+	zombies[0].onclick = function() {
+		step0 = step0 - 100
+		console.log(step0)
+		zombies[0].style.marginLeft = step0 + px;
+		if (step0 == 600) {
+		shooters[0].style.display = "none"
+		}
+		if (step0 == 500) {
+			youwin = 1
+		}
+		if (youwin == 1) {
+		youwintxt.style.display = "block"
+		brain.style.display = "block"
+		}
+	}
+	zombies[1].onclick = function() {
+		step1 = step1 - 100
+		console.log(step0)
+		zombies[1].style.marginLeft = step1 + px;
+		if (step1 == 600) {
+		shooters[1].style.display = "none"
+		}
+		if (step1 == 500) {
+			youwin = 1
+		}
+		if (youwin == 1) {
+		youwintxt.style.display = "block"
+		brain.style.display = "block"
+		}
+	}
+	zombies[2].onclick = function() {
+		step2 = step2 - 100
+		console.log(step0)
+		zombies[2].style.marginLeft = step2 + px;
+		if (step2 == 600) {
+		shooters[2].style.display = "none"
+		}
+		if (step2 == 500) {
+			youwin = 1
+		}
+		if (youwin == 1) {
+		youwintxt.style.display = "block"
+		brain.style.display = "block"
+		}
+	}
+	zombies[3].onclick = function() {
+		step3 = step3 - 100
+		console.log(step0)
+		zombies[3].style.marginLeft = step3 + px;
+		if (step3 == 600) {
+		shooters[3].style.display = "none"
+		}
+		if (step3 == 500) {
+			youwin = 1
+		}
+		if (youwin == 1) {
+		youwintxt.style.display = "block"
+		brain.style.display = "block"
+		}
+	}
+	zombies[4].onclick = function() {
+		step4 = step4 - 100
+		console.log(step0)
+		zombies[4].style.marginLeft = step4 + px;
+		if (step4 == 600) {
+		shooters[4].style.display = "none"
+		}
+		if (step4 == 500) {
+			youwin = 1
+		}
+		if (youwin == 1) {
+		youwintxt.style.display = "block"
+		brain.style.display = "block"
+		}
+	}
+
+	
+
+</script>
+</body>
+</html>
